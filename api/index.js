@@ -1,5 +1,5 @@
 // src/serverless.ts
-import { handle } from "hono/vercel";
+import { getRequestListener } from "@hono/node-server";
 
 // src/app.ts
 import { Hono as Hono6 } from "hono";
@@ -1163,9 +1163,7 @@ app.notFound(
 var app_default = app;
 
 // src/serverless.ts
-var config = { runtime: "nodejs" };
-var serverless_default = handle(app_default);
+var serverless_default = getRequestListener(app_default.fetch);
 export {
-  config,
   serverless_default as default
 };
