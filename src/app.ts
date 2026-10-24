@@ -1,7 +1,6 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
-import { serve } from "@hono/node-server";
 
 import { env } from "@/config/env";
 import { routes } from "@/routes";
@@ -40,7 +39,4 @@ app.notFound((c) =>
     404,
   ),
 );
-
-serve({ fetch: app.fetch, port: env.PORT }, (info) => {
-  logger.info(` DevInsight AI backend jalan di http://localhost:${info.port}`);
-});
+export default app;
