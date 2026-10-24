@@ -18,12 +18,11 @@
     "isolatedModules": true,
 
     "outDir": "dist",
-    "rootDir": "src",
 
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "api"],
   "exclude": ["node_modules", "dist", "tests"]
 }
