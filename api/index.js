@@ -339,8 +339,7 @@ var CACHE_TTL = {
 // src/utils/logger.ts
 import pino from "pino";
 var logger = pino({
-  level: env.NODE_ENV === "production" ? "info" : "debug",
-  transport: env.NODE_ENV !== "production" ? { target: "pino-pretty", options: { colorize: true, translateTime: "HH:MM:ss" } } : void 0
+  level: env.NODE_ENV === "production" ? "info" : "debug"
 });
 
 // src/services/github/github-aggregator.service.ts
